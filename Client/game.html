@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Minecraft JS</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="menu.css" />
+        <link rel="icon" href="Assets/sprites/misc/icon_16x16.png" />
+    </head>
+    <body oncontextmenu="return false;">
+        <div class="chromium-issue-1092080-workaround__wrapper">
+            <canvas id="canvas"></canvas>
+            <div class="chromium-issue-1092080-workaround__overlay"></div>
+
+            <div id="pause-menu">
+                <div class="pause-menu-page" data-page="1">
+                    <h2
+                        class="input-field-title pause-menu-title"
+                        style="
+                            margin-top: -2rem;
+                            margin-bottom: 2rem;
+                            font-size: xx-large;
+                        "
+                    >
+                        Game Menu
+                    </h2>
+                    <button class="btn" onclick="pauseMenu.close()">
+                        Back to Game
+                    </button>
+                    <button class="btn" onclick="pauseMenu.setPage(2)">
+                        Debug Menu
+                    </button>
+                    <!-- These will be uncommented when advancements are added -->
+                    <!-- <div>
+                        <button class="btn">Advancements</button>
+                        <button class="btn">Statistics</button>
+                    </div> -->
+                    <a
+                        class="btn"
+                        href="https://github.com/plekiko/MinecraftJS/issues/new"
+                        target="_blank"
+                        >Report Bugs</a
+                    >
+                    <button
+                        class="btn"
+                        onclick="if(typeof SaveWorld==='function')SaveWorld(false);window.location.href='index.html'"
+                    >
+                        Save and Quit to Title
+                    </button>
+                </div>
+
+                <div class="pause-menu-page" data-page="2">
+                    <h2 class="input-field-title pause-menu-title">Debug Menu</h2>
+                    <button class="btn" onclick="pauseMenu.setPage(1)">Back</button>
+                    <button class="btn" onclick="if(typeof SaveWorld==='function')SaveWorld()">Save World</button>
+                    <button class="btn" onclick="if(typeof SaveWorld==='function')SaveWorld(false, true)">Save World File</button>
+                    <button class="btn" id="debug-chunk-borders" onclick="toggleChunkBorders()">Chunk Borders</button>
+                    <button class="btn" id="debug-camera" onclick="toggleCamera()">Camera</button>
+                    <button class="btn" id="debug-hitbox" onclick="toggleHitbox()">Hitbox</button>
+                    <button class="btn" id="debug-print-block" onclick="togglePrintBlock()">Print Block</button>
+                    <button class="btn" id="debug-file-size" onclick="toggleFileSize()">File Size</button>
+                    <button class="btn" id="debug-fps" onclick="toggleFps()">FPS</button>
+                    <button class="btn" id="debug-coords" onclick="toggleCoordinates()">Coords</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+        <script src="node_modules/tooloud/dist/tooloud.min.js"></script>
+        
+        <script src="Assets/utils/indexDB.js"></script>
+
+        <script src="Assets/utils/globals.js"></script>
+        <script src="Assets/utils/keyBindings.js"></script>
+        <script src="Assets/utils/input.js"></script>
+        <script src="Assets/utils/classes.js"></script>
+        <script src="Assets/game/camera.js"></script>
+        <script src="Assets/utils/object.js"></script>
+        <script src="Assets/game/sounds.js"></script>
+        <script src="Assets/game/music.js"></script>
+        <script src="Assets/game/lootTable.js"></script>
+        <script src="Assets/game/item.js"></script>
+        <script src="Assets/game/items.js"></script>
+        <script src="Assets/world/block.js"></script>
+        <script src="Assets/world/blocks.js"></script>
+
+        <script src="Assets/world/particle.js"></script>
+        <script src="Assets/world/particleEmitter.js"></script>
+
+        <script src="Assets/world/chestLoot.js"></script>
+        <script src="Assets/world/trees.js"></script>
+        <script src="Assets/utils/noise.js"></script>
+        <script src="Assets/world/biome.js"></script>
+        <script src="Assets/world/dimension.js"></script>
+        <script src="Assets/world/structure.js"></script>
+        <script src="Assets/world/structures.js"></script>
+        <script src="Assets/world/chunk.js"></script>
+        <script src="Assets/game/inventoryItem.js"></script>
+        <script src="Assets/game/recipe.js"></script>
+        <script src="Assets/game/recipes.js"></script>
+        <script src="Assets/game/skinPreview.js"></script>
+        <script src="Assets/game/inventory.js"></script>
+        <script src="Assets/game/hotbar.js"></script>
+        <script src="Assets/utils/renderer.js"></script>
+        <script src="Assets/world/generator.js"></script>
+        <script src="Assets/world/world.js"></script>
+        <script src="Assets/world/saving.js"></script>
+        <script src="Assets/game/body.js"></script>
+        <script src="Assets/game/entity.js"></script>
+        <script src="Assets/world/explosion.js"></script>
+        <script src="Assets/entities/drop.js"></script>
+        <script src="Assets/entities/mob.js"></script>
+        <script src="Assets/entities/projectile.js"></script>
+
+        <script src="Assets/entities/projectiles/snowBall.js"></script>
+
+        <script src="Assets/entities/mobs/pig.js"></script>
+        <script src="Assets/entities/mobs/cow.js"></script>
+        <script src="Assets/entities/mobs/sheep.js"></script>
+        <script src="Assets/entities/mobs/zombie.js"></script>
+        <script src="Assets/entities/mobs/creeper.js"></script>
+        <script src="Assets/entities/mobs/wither_skeleton.js"></script>
+
+        <script src="Assets/entities/fallingBlock.js"></script>
+        <script src="Assets/entities/TNT.js"></script>
+        <script src="Assets/entities/entities.js"></script>
+
+        <script src="Assets/entities/player.js"></script>
+        <script src="Assets/game/chat.js"></script>
+        <script src="Assets/game/pauseMenu.js"></script>
+        <script src="main.js"></script>
+        <script src="debug.js"></script>
+
+        <script src="buttonUtils.js"></script>
+        <script src="Assets/utils/texturePackLoader.js"></script>
+
+        <script src="Assets/multiplayer/messageHandler.js"></script>
+        <script src="Assets/multiplayer/server.js"></script>
+    </body>
+</html>

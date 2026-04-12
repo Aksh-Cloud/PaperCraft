@@ -1,0 +1,12 @@
+Server/server-icon.gif
+Server/server-icon.png
+Server/server.properties
+.vscode/settings.json
+Server/node_modules
+Client/node_modules
+
+# Files that get created when you run the server
+Server/server.properties
+Server/banned-ips.json
+Server/usercache.json
+Server/world

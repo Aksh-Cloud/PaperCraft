@@ -1,0 +1,43 @@
+name: Deploy client to itch.io
+
+on:
+  push:
+    branches:
+      - live
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Client dependencies
+        working-directory: ./Client
+        run: npm ci
+
+      - name: Install Server dependencies
+        working-directory: ./Server
+        run: npm install
+
+      - name: Zip Server folder
+        run: |
+          cd Server
+          zip -r ../Client/server.zip .
+
+      - name: Deploy client folder to itch.io
+        uses: yeslayla/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          ITCH_USER: plekiko
+          ITCH_GAME: minecraft-js
+          CHANNEL: html
+          PACKAGE: ./Client
+        with:
+          args: push ${{ env.PACKAGE }} ${{ env.ITCH_USER }}/${{ env.ITCH_GAME }}:${{ env.CHANNEL }} --if-changed

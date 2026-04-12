@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PaperCraft — Account Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Animated background grid -->
+<div class="bg-grid"></div>
+<div class="bg-fog"></div>
+
+<!-- Floating pixel particles -->
+<div class="particles" id="particles"></div>
+
+<!-- ========= HEADER ========= -->
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <div class="logo-cube">
+                    <div class="cube-face front"></div>
+                    <div class="cube-face top"></div>
+                    <div class="cube-face side"></div>
+                </div>
+            </div>
+            <span class="logo-text">PaperCraft</span>
+            <span class="logo-tag">ACCOUNT</span>
+        </a>
+        <nav class="site-nav">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="login.html" class="nav-link">Sign In</a>
+            <a href="signup.html" class="nav-link">Sign Up</a>
+            <a href="profile.html" class="nav-link">Profile</a>
+        </nav>
+        <div class="nav-cta">
+            <a href="signup.html" class="btn btn-primary">Get Started</a>
+        </div>
+    </div>
+</header>
+
+<!-- ========= HERO ========= -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>2D MINECRAFT-INSPIRED</span>
+        </div>
+        <h1 class="hero-title">
+            <span class="title-line">Your World,</span>
+            <span class="title-line accent">Your Account.</span>
+        </h1>
+        <p class="hero-sub">
+            Sign in to sync your worlds, customise your skin,<br>
+            join multiplayer servers and track your progress.
+        </p>
+        <div class="hero-actions">
+            <a href="signup.html" class="btn btn-hero">Create Account</a>
+            <a href="login.html" class="btn btn-ghost">
+                <span>Sign In</span>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg>
+            </a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-num">10K+</span>
+                <span class="stat-label">Players</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-num">50K+</span>
+                <span class="stat-label">Worlds Created</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-num">99.9%</span>
+                <span class="stat-label">Uptime</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-visual">
+        <div class="hero-screen">
+            <div class="screen-bar">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="screen-body">
+                <div class="pixel-scene">
+                    <div class="sky-layer"></div>
+                    <div class="cloud c1"></div>
+                    <div class="cloud c2"></div>
+                    <div class="sun-pixel"></div>
+                    <div class="terrain-layer">
+                        <div class="block b-grass" style="--x:0;--y:0"></div>
+                        <div class="block b-grass" style="--x:1;--y:0"></div>
+                        <div class="block b-grass" style="--x:2;--y:0"></div>
+                        <div class="block b-grass" style="--x:3;--y:0"></div>
+                        <div class="block b-grass" style="--x:4;--y:0"></div>
+                        <div class="block b-grass" style="--x:5;--y:0"></div>
+                        <div class="block b-grass" style="--x:6;--y:0"></div>
+                        <div class="block b-grass" style="--x:7;--y:0"></div>
+                        <div class="block b-dirt"  style="--x:0;--y:1"></div>
+                        <div class="block b-dirt"  style="--x:1;--y:1"></div>
+                        <div class="block b-stone" style="--x:2;--y:1"></div>
+                        <div class="block b-dirt"  style="--x:3;--y:1"></div>
+                        <div class="block b-dirt"  style="--x:4;--y:1"></div>
+                        <div class="block b-stone" style="--x:5;--y:1"></div>
+                        <div class="block b-dirt"  style="--x:6;--y:1"></div>
+                        <div class="block b-dirt"  style="--x:7;--y:1"></div>
+                        <div class="block b-stone" style="--x:0;--y:2"></div>
+                        <div class="block b-stone" style="--x:1;--y:2"></div>
+                        <div class="block b-stone" style="--x:2;--y:2"></div>
+                        <div class="block b-stone" style="--x:3;--y:2"></div>
+                        <div class="block b-coal"  style="--x:4;--y:2"></div>
+                        <div class="block b-stone" style="--x:5;--y:2"></div>
+                        <div class="block b-stone" style="--x:6;--y:2"></div>
+                        <div class="block b-stone" style="--x:7;--y:2"></div>
+                        <!-- Tree -->
+                        <div class="block b-log" style="--x:5;--y:-1"></div>
+                        <div class="block b-log" style="--x:5;--y:-2"></div>
+                        <div class="block b-leaf" style="--x:4;--y:-3"></div>
+                        <div class="block b-leaf" style="--x:5;--y:-3"></div>
+                        <div class="block b-leaf" style="--x:6;--y:-3"></div>
+                        <div class="block b-leaf" style="--x:4;--y:-4"></div>
+                        <div class="block b-leaf" style="--x:5;--y:-4"></div>
+                        <div class="block b-leaf" style="--x:6;--y:-4"></div>
+                        <!-- Player sprite -->
+                        <div class="player-sprite" style="--px:1.5;--py:-1">
+                            <div class="p-head"></div>
+                            <div class="p-body"></div>
+                            <div class="p-leg l1"></div>
+                            <div class="p-leg l2"></div>
+                        </div>
+                    </div>
+                    <div class="hotbar-preview">
+                        <div class="hb-slot active"><div class="b-sword-icon"></div></div>
+                        <div class="hb-slot"><div class="b-pickaxe-icon"></div></div>
+                        <div class="hb-slot"><div class="b-dirt-icon"></div></div>
+                        <div class="hb-slot"></div>
+                        <div class="hb-slot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========= FEATURES ========= -->
+<section class="features" id="features">
+    <div class="section-header">
+        <div class="section-tag">WHY SIGN UP</div>
+        <h2 class="section-title">Everything you need<br><span class="accent">in one account.</span></h2>
+    </div>
+    <div class="features-grid">
+
+        <div class="feature-card card-large">
+            <div class="feature-icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect x="4" y="4" width="10" height="10" rx="1" fill="currentColor" opacity=".3"/>
+                    <rect x="18" y="4" width="10" height="10" rx="1" fill="currentColor" opacity=".6"/>
+                    <rect x="4" y="18" width="10" height="10" rx="1" fill="currentColor" opacity=".6"/>
+                    <rect x="18" y="18" width="10" height="10" rx="1" fill="currentColor"/>
+                </svg>
+            </div>
+            <h3>World Sync</h3>
+            <p>Your worlds are saved to the cloud and load instantly on any device. Never lose a world again.</p>
+            <div class="card-visual">
+                <div class="sync-dots">
+                    <div class="s-dot active"></div>
+                    <div class="s-line"></div>
+                    <div class="s-dot active"></div>
+                    <div class="s-line"></div>
+                    <div class="s-dot"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon skin-icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <rect x="9" y="2" width="10" height="10" rx="1" fill="currentColor"/>
+                    <rect x="7" y="13" width="14" height="10" rx="1" fill="currentColor" opacity=".7"/>
+                    <rect x="4" y="13" width="4" height="9" rx="1" fill="currentColor" opacity=".5"/>
+                    <rect x="20" y="13" width="4" height="9" rx="1" fill="currentColor" opacity=".5"/>
+                </svg>
+            </div>
+            <h3>Custom Skins</h3>
+            <p>Upload and manage your player skin. Show your personality in multiplayer.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon server-icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <rect x="4" y="4" width="20" height="7" rx="2" fill="currentColor" opacity=".4"/>
+                    <rect x="4" y="14" width="20" height="7" rx="2" fill="currentColor" opacity=".7"/>
+                    <circle cx="22" cy="7.5" r="1.5" fill="#4ade80"/>
+                    <circle cx="22" cy="17.5" r="1.5" fill="#4ade80"/>
+                </svg>
+            </div>
+            <h3>Multiplayer</h3>
+            <p>Connect to servers with your account. Friends list and invite system coming soon.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon stats-icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <rect x="4" y="18" width="4" height="6" rx="1" fill="currentColor" opacity=".4"/>
+                    <rect x="12" y="12" width="4" height="12" rx="1" fill="currentColor" opacity=".7"/>
+                    <rect x="20" y="6" width="4" height="18" rx="1" fill="currentColor"/>
+                </svg>
+            </div>
+            <h3>Stats & Progress</h3>
+            <p>Track blocks mined, mobs killed, worlds explored and more with detailed analytics.</p>
+        </div>
+
+        <div class="feature-card card-wide">
+            <div class="feature-icon secure-icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <path d="M14 3L5 7v6c0 5.25 3.85 10.15 9 11.35C19.15 23.15 23 18.25 23 13V7l-9-4z" fill="currentColor" opacity=".3" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M10 14l2.5 2.5L18 11" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+                </svg>
+            </div>
+            <h3>Secure & Private</h3>
+            <p>Your account and world data is encrypted and never shared. Your builds are yours.</p>
+            <div class="security-badge">
+                <span class="badge-lock">🔒</span>
+                <span>256-bit encryption</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========= HOW IT WORKS ========= -->
+<section class="how-it-works">
+    <div class="section-header">
+        <div class="section-tag">HOW IT WORKS</div>
+        <h2 class="section-title">Up and playing<br><span class="accent">in 3 steps.</span></h2>
+    </div>
+    <div class="steps-row">
+        <div class="step">
+            <div class="step-number">01</div>
+            <div class="step-icon">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <rect x="6" y="8" width="24" height="20" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    <path d="M12 18h12M18 12v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                </svg>
+            </div>
+            <h3>Create Account</h3>
+            <p>Sign up for free with just an email and password. No credit card required.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+            <div class="step-number">02</div>
+            <div class="step-icon">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <circle cx="18" cy="14" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    <path d="M6 30c0-5 5.4-9 12-9s12 4 12 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" fill="none"/>
+                </svg>
+            </div>
+            <h3>Set Up Profile</h3>
+            <p>Choose your username, upload a custom skin and personalise your profile.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+            <div class="step-number">03</div>
+            <div class="step-icon">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <rect x="4" y="8" width="28" height="20" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    <path d="M14 18l3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                </svg>
+            </div>
+            <h3>Play & Sync</h3>
+            <p>Launch the game, sign in and your worlds sync automatically everywhere.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ========= CTA ========= -->
+<section class="cta-section">
+    <div class="cta-inner">
+        <div class="cta-glow"></div>
+        <div class="cta-pixel-art">
+            <div class="cta-block b1"></div>
+            <div class="cta-block b2"></div>
+            <div class="cta-block b3"></div>
+            <div class="cta-block b4"></div>
+        </div>
+        <h2>Ready to start your adventure?</h2>
+        <p>Join thousands of players already building and exploring in PaperCraft.</p>
+        <div class="cta-actions">
+            <a href="signup.html" class="btn btn-primary btn-large">Create Free Account</a>
+            <a href="login.html" class="btn btn-outline btn-large">Sign In</a>
+        </div>
+    </div>
+</section>
+
+<!-- ========= FOOTER ========= -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <span class="footer-logo">PaperCraft</span>
+            <p>A 2D Minecraft-inspired sandbox game<br>built with vanilla JavaScript.</p>
+            <a href="https://github.com/Aksh-Cloud/PaperCraft" class="footer-github" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                View Source
+            </a>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4>Account</h4>
+                <a href="login.html">Sign In</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="profile.html">My Profile</a>
+                <a href="settings.html">Settings</a>
+            </div>
+            <div class="footer-col">
+                <h4>Game</h4>
+                <a href="../game.html">Play Now</a>
+                <a href="#">Changelog</a>
+                <a href="#">Bug Reports</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Disclaimer</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2025 PaperCraft · Not affiliated with Mojang Studios or Microsoft.</span>
+        <span>Built with ❤️ in JavaScript</span>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

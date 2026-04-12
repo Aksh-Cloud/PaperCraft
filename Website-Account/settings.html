@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings — PaperCraft Account</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="dashboard-page">
+
+<div class="bg-grid"></div>
+<div class="bg-fog"></div>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <div class="logo-cube">
+                    <div class="cube-face front"></div>
+                    <div class="cube-face top"></div>
+                    <div class="cube-face side"></div>
+                </div>
+            </div>
+            <span class="logo-text">PaperCraft</span>
+            <span class="logo-tag">ACCOUNT</span>
+        </a>
+        <nav class="site-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="profile.html" class="nav-link">Profile</a>
+            <a href="settings.html" class="nav-link active">Settings</a>
+        </nav>
+        <div class="nav-cta">
+            <button class="btn btn-ghost" id="signOutBtn">Sign Out</button>
+        </div>
+    </div>
+</header>
+
+<main class="settings-main">
+    <div class="settings-layout">
+
+        <!-- Sidebar -->
+        <aside class="settings-sidebar">
+            <div class="sb-section">ACCOUNT</div>
+            <a href="#profile" class="sb-link active" data-section="profile">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="6" r="3" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+                Profile
+            </a>
+            <a href="#security" class="sb-link" data-section="security">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="8" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M5 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+                Security
+            </a>
+            <a href="#notifications" class="sb-link" data-section="notifications">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2C5.8 2 4 3.8 4 6v4H2l2 2h8l2-2h-2V6c0-2.2-1.8-4-4-4zM6 12a2 2 0 004 0" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+                Notifications
+            </a>
+            <div class="sb-section">GAME</div>
+            <a href="#game" class="sb-link" data-section="game">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M5 8H9M7 6v4M11 8h.5M12 9h-.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="square"/></svg>
+                Game Preferences
+            </a>
+            <a href="#data" class="sb-link" data-section="data">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><ellipse cx="8" cy="5" rx="5" ry="2" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M3 5v3c0 1.1 2.2 2 5 2s5-.9 5-2V5M3 8v3c0 1.1 2.2 2 5 2s5-.9 5-2V8" stroke="currentColor" stroke-width="1.2"/></svg>
+                Data & Privacy
+            </a>
+            <div class="sb-section">DANGER</div>
+            <a href="#danger" class="sb-link danger-link" data-section="danger">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1l7 13H1L8 1z" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M8 6v3M8 11v1" stroke="currentColor" stroke-width="1.2" stroke-linecap="square"/></svg>
+                Danger Zone
+            </a>
+        </aside>
+
+        <!-- Settings Content -->
+        <div class="settings-content">
+
+            <!-- Profile Settings -->
+            <section class="settings-section active" id="section-profile">
+                <div class="section-title-row">
+                    <h2>Profile Settings</h2>
+                    <p>Manage your public profile information.</p>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Display Name</h3>
+                    <p>This is shown to other players in multiplayer.</p>
+                    <div class="setting-row">
+                        <div class="input-wrap">
+                            <input type="text" id="displayName" value="SteveBuilder" maxlength="15" placeholder="Your username"/>
+                        </div>
+                        <button class="btn btn-primary setting-save" data-field="displayName">Save</button>
+                    </div>
+                    <span class="field-hint">3–15 characters</span>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Email Address</h3>
+                    <p>Your login email. Not visible to other players.</p>
+                    <div class="setting-row">
+                        <div class="input-wrap">
+                            <input type="email" id="settingsEmail" value="steve@example.com" placeholder="your@email.com"/>
+                        </div>
+                        <button class="btn btn-primary setting-save" data-field="email">Save</button>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Default Gamemode</h3>
+                    <p>The default gamemode when creating a new world.</p>
+                    <div class="setting-row">
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="gamemode" value="0" checked />
+                                <span class="radio-custom"></span>
+                                <span>Survival</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="gamemode" value="1" />
+                                <span class="radio-custom"></span>
+                                <span>Creative</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="gamemode" value="2" />
+                                <span class="radio-custom"></span>
+                                <span>Adventure</span>
+                            </label>
+                        </div>
+                        <button class="btn btn-primary setting-save" data-field="gamemode">Save</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Security Settings -->
+            <section class="settings-section" id="section-security">
+                <div class="section-title-row">
+                    <h2>Security</h2>
+                    <p>Keep your account safe.</p>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Change Password</h3>
+                    <p>Use a strong, unique password to protect your account.</p>
+                    <div class="form-group">
+                        <label>Current Password</label>
+                        <div class="input-wrap">
+                            <input type="password" id="currentPassword" placeholder="••••••••" autocomplete="current-password"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>New Password</label>
+                        <div class="input-wrap">
+                            <input type="password" id="newPassword" placeholder="••••••••" autocomplete="new-password"/>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+                            <span class="strength-label" id="strengthLabel">Enter password</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm New Password</label>
+                        <div class="input-wrap">
+                            <input type="password" id="confirmNewPassword" placeholder="••••••••" autocomplete="new-password"/>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="changePasswordBtn">Update Password</button>
+                    <div class="form-error" id="passwordChangeError"></div>
+                    <div class="form-success" id="passwordChangeSuccess"></div>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Active Sessions</h3>
+                    <p>Devices currently signed in to your account.</p>
+                    <div class="sessions-list">
+                        <div class="session-item current">
+                            <div class="session-icon">💻</div>
+                            <div class="session-info">
+                                <div class="session-device">This Device</div>
+                                <div class="session-meta">Chrome on Windows · Last active now</div>
+                            </div>
+                            <span class="session-badge">Current</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-ghost" id="signOutAllBtn">Sign Out All Other Devices</button>
+                </div>
+            </section>
+
+            <!-- Notifications Settings -->
+            <section class="settings-section" id="section-notifications">
+                <div class="section-title-row">
+                    <h2>Notifications</h2>
+                    <p>Choose what you want to be notified about.</p>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Email Notifications</h3>
+                    <div class="toggle-list">
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <div class="toggle-title">Game Updates</div>
+                                <div class="toggle-desc">Be notified when new features are added</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked id="notif-updates"/>
+                                <span class="toggle-track"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <div class="toggle-title">Friend Requests</div>
+                                <div class="toggle-desc">When someone wants to add you as a friend</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked id="notif-friends"/>
+                                <span class="toggle-track"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <div class="toggle-title">Server Invites</div>
+                                <div class="toggle-desc">When you're invited to join a multiplayer server</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="notif-servers"/>
+                                <span class="toggle-track"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <div class="toggle-title">Newsletter</div>
+                                <div class="toggle-desc">Occasional updates about PaperCraft</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="notif-newsletter"/>
+                                <span class="toggle-track"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="saveNotifications">Save Preferences</button>
+                </div>
+            </section>
+
+            <!-- Game Preferences -->
+            <section class="settings-section" id="section-game">
+                <div class="section-title-row">
+                    <h2>Game Preferences</h2>
+                    <p>Default settings applied when you start the game.</p>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Audio</h3>
+                    <div class="slider-setting">
+                        <label>Music Volume</label>
+                        <div class="slider-row">
+                            <input type="range" min="0" max="100" value="70" class="game-slider" id="musicVolume"/>
+                            <span class="slider-val" id="musicVal">70%</span>
+                        </div>
+                    </div>
+                    <div class="slider-setting">
+                        <label>SFX Volume</label>
+                        <div class="slider-row">
+                            <input type="range" min="0" max="100" value="100" class="game-slider" id="sfxVolume"/>
+                            <span class="slider-val" id="sfxVal">100%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Display</h3>
+                    <div class="toggle-list">
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <div class="toggle-title">Show FPS</div>
+                                <div class="toggle-desc">Display frame rate counter in-game</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked id="showFps"/>
+                                <span class="toggle-track"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <div class="toggle-title">Show Coordinates</div>
+                                <div class="toggle-desc">Display player X/Y coordinates</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked id="showCoords"/>
+                                <span class="toggle-track"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <div class="toggle-title">Lighting Effects</div>
+                                <div class="toggle-desc">Enable dynamic lighting in-game</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked id="lighting"/>
+                                <span class="toggle-track"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="saveGamePrefs">Save Game Preferences</button>
+                </div>
+            </section>
+
+            <!-- Data & Privacy -->
+            <section class="settings-section" id="section-data">
+                <div class="section-title-row">
+                    <h2>Data & Privacy</h2>
+                    <p>Control your data and how it's used.</p>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Download Your Data</h3>
+                    <p>Export all your account data including profile, worlds and statistics.</p>
+                    <button class="btn btn-ghost" id="downloadDataBtn">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v8M3 7l4 4 4-4M2 13h10" stroke="currentColor" stroke-width="1.2" stroke-linecap="square"/></svg>
+                        Download Data
+                    </button>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Privacy Settings</h3>
+                    <div class="toggle-list">
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <div class="toggle-title">Public Profile</div>
+                                <div class="toggle-desc">Other players can see your profile and stats</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked id="publicProfile"/>
+                                <span class="toggle-track"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <div class="toggle-title">Show Online Status</div>
+                                <div class="toggle-desc">Let others see when you're playing</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked id="showOnline"/>
+                                <span class="toggle-track"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="savePrivacy">Save Privacy Settings</button>
+                </div>
+            </section>
+
+            <!-- Danger Zone -->
+            <section class="settings-section" id="section-danger">
+                <div class="section-title-row">
+                    <h2>Danger Zone</h2>
+                    <p>These actions are irreversible. Please be certain.</p>
+                </div>
+
+                <div class="settings-card danger-card">
+                    <h3>Delete All Worlds</h3>
+                    <p>Permanently delete all saved worlds from your account. This cannot be undone.</p>
+                    <button class="btn btn-danger-outline" id="deleteWorldsBtn">Delete All Worlds</button>
+                </div>
+
+                <div class="settings-card danger-card">
+                    <h3>Delete Account</h3>
+                    <p>Permanently delete your account and all associated data. There is no going back.</p>
+                    <button class="btn btn-danger" id="deleteAccountBtn">Delete My Account</button>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<!-- Confirm Modal -->
+<div class="modal-overlay" id="confirmModal" hidden>
+    <div class="modal">
+        <div class="modal-header">
+            <h3 id="confirmTitle">Are you sure?</h3>
+            <button class="modal-close" id="closeConfirmModal">✕</button>
+        </div>
+        <div class="modal-body">
+            <p id="confirmMessage">This action cannot be undone.</p>
+            <div class="form-group" id="confirmInputWrap" hidden>
+                <label>Type <strong id="confirmWord"></strong> to confirm:</label>
+                <div class="input-wrap">
+                    <input type="text" id="confirmInput" placeholder="" autocomplete="off"/>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-danger" id="confirmAction" disabled>Confirm</button>
+            <button class="btn btn-ghost" id="cancelAction">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/main.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>

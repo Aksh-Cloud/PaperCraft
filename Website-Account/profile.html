@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile — PaperCraft Account</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="dashboard-page">
+
+<div class="bg-grid"></div>
+<div class="bg-fog"></div>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <div class="logo-cube">
+                    <div class="cube-face front"></div>
+                    <div class="cube-face top"></div>
+                    <div class="cube-face side"></div>
+                </div>
+            </div>
+            <span class="logo-text">PaperCraft</span>
+            <span class="logo-tag">ACCOUNT</span>
+        </a>
+        <nav class="site-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="profile.html" class="nav-link active">Profile</a>
+            <a href="settings.html" class="nav-link">Settings</a>
+        </nav>
+        <div class="nav-cta">
+            <button class="btn btn-ghost" id="signOutBtn">Sign Out</button>
+        </div>
+    </div>
+</header>
+
+<!-- Not logged in overlay -->
+<div class="auth-gate" id="authGate" hidden>
+    <div class="auth-gate-inner">
+        <div class="gate-icon">🔒</div>
+        <h2>Sign in required</h2>
+        <p>You need to be signed in to view your profile.</p>
+        <a href="login.html" class="btn btn-primary">Sign In</a>
+        <a href="signup.html" class="btn btn-ghost">Create Account</a>
+    </div>
+</div>
+
+<main class="dashboard-main" id="dashboardContent">
+
+    <!-- Profile Header -->
+    <div class="profile-header">
+        <div class="profile-header-inner">
+            <div class="profile-avatar-wrap">
+                <div class="profile-avatar" id="profileAvatar">
+                    <!-- Pixel skin preview -->
+                    <div class="avatar-skin">
+                        <div class="sk-head"></div>
+                        <div class="sk-body"></div>
+                        <div class="sk-arm left"></div>
+                        <div class="sk-arm right"></div>
+                        <div class="sk-leg left"></div>
+                        <div class="sk-leg right"></div>
+                    </div>
+                </div>
+                <button class="avatar-change-btn" id="changeSkinBtn">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M10 2l2 2-8 8H2v-2l8-8z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="profile-info">
+                <div class="profile-username" id="profileUsername">SteveBuilder</div>
+                <div class="profile-email" id="profileEmail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="daa9aebfacbf9abfa2bbb7aab6bff4b9b5b7">[email&#160;protected]</a></div>
+                <div class="profile-badges">
+                    <span class="badge badge-blue">Player</span>
+                    <span class="badge badge-green">Survival</span>
+                </div>
+                <div class="profile-joined">Member since <span id="joinDate">March 2025</span></div>
+            </div>
+            <div class="profile-header-actions">
+                <a href="../game.html" class="btn btn-primary">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><polygon points="3,1 13,7 3,13" fill="currentColor"/></svg>
+                    Play Now
+                </a>
+                <a href="settings.html" class="btn btn-ghost">Settings</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Grid -->
+    <div class="dashboard-grid">
+
+        <!-- Stats Panel -->
+        <div class="dash-panel stats-panel">
+            <div class="panel-header">
+                <h2>Statistics</h2>
+                <span class="panel-tag">LIFETIME</span>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">⛏️</div>
+                    <div class="stat-value" id="stat-blocks">0</div>
+                    <div class="stat-name">Blocks Mined</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏗️</div>
+                    <div class="stat-value" id="stat-placed">0</div>
+                    <div class="stat-name">Blocks Placed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚔️</div>
+                    <div class="stat-value" id="stat-kills">0</div>
+                    <div class="stat-name">Mobs Killed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💀</div>
+                    <div class="stat-value" id="stat-deaths">0</div>
+                    <div class="stat-name">Deaths</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🌍</div>
+                    <div class="stat-value" id="stat-worlds">0</div>
+                    <div class="stat-name">Worlds Created</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-value" id="stat-time">0h</div>
+                    <div class="stat-name">Playtime</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Worlds Panel -->
+        <div class="dash-panel worlds-panel">
+            <div class="panel-header">
+                <h2>My Worlds</h2>
+                <button class="panel-action" id="newWorldBtn">+ New World</button>
+            </div>
+            <div class="worlds-list" id="worldsList">
+                <!-- Demo worlds -->
+                <div class="world-item">
+                    <div class="world-thumb">
+                        <div class="wt-grass"></div>
+                        <div class="wt-dirt"></div>
+                        <div class="wt-stone"></div>
+                    </div>
+                    <div class="world-info">
+                        <div class="world-name">My First World</div>
+                        <div class="world-meta">Survival · Last played 2 days ago</div>
+                    </div>
+                    <div class="world-actions">
+                        <button class="wa-btn play">▶</button>
+                        <button class="wa-btn del">✕</button>
+                    </div>
+                </div>
+                <div class="world-item">
+                    <div class="world-thumb creative">
+                        <div class="wt-grass"></div>
+                        <div class="wt-dirt"></div>
+                        <div class="wt-stone"></div>
+                    </div>
+                    <div class="world-info">
+                        <div class="world-name">Creative Build</div>
+                        <div class="world-meta">Creative · Last played 1 week ago</div>
+                    </div>
+                    <div class="world-actions">
+                        <button class="wa-btn play">▶</button>
+                        <button class="wa-btn del">✕</button>
+                    </div>
+                </div>
+                <div class="worlds-empty" id="worldsEmpty" hidden>
+                    <p>No worlds yet. <a href="../game.html">Create one!</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skin Panel -->
+        <div class="dash-panel skin-panel">
+            <div class="panel-header">
+                <h2>Player Skin</h2>
+            </div>
+            <div class="skin-preview-wrap">
+                <div class="skin-3d-preview">
+                    <div class="skin-preview-figure" id="skinFigure">
+                        <div class="spf-head"></div>
+                        <div class="spf-body"></div>
+                        <div class="spf-arm left"></div>
+                        <div class="spf-arm right"></div>
+                        <div class="spf-leg left"></div>
+                        <div class="spf-leg right"></div>
+                    </div>
+                    <div class="skin-shadow"></div>
+                </div>
+                <div class="skin-controls">
+                    <label class="skin-upload-btn btn btn-ghost" for="skinUpload">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v8M3 5l4-4 4 4M2 11h10" stroke="currentColor" stroke-width="1.2" stroke-linecap="square"/></svg>
+                        Upload Skin
+                    </label>
+                    <input type="file" id="skinUpload" accept=".png" hidden />
+                    <button class="btn btn-ghost" id="clearSkinBtn">Reset to Default</button>
+                    <p class="skin-hint">PNG format, 64×64px (Steve/Alex layout)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="dash-panel activity-panel">
+            <div class="panel-header">
+                <h2>Recent Activity</h2>
+            </div>
+            <div class="activity-feed" id="activityFeed">
+                <div class="activity-item">
+                    <span class="ai-icon">🌍</span>
+                    <div class="ai-text">
+                        <div class="ai-title">Created "My First World"</div>
+                        <div class="ai-time">2 days ago</div>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <span class="ai-icon">⚔️</span>
+                    <div class="ai-text">
+                        <div class="ai-title">Killed first Zombie</div>
+                        <div class="ai-time">2 days ago</div>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <span class="ai-icon">💎</span>
+                    <div class="ai-text">
+                        <div class="ai-title">Found first Diamond</div>
+                        <div class="ai-time">3 days ago</div>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <span class="ai-icon">👤</span>
+                    <div class="ai-text">
+                        <div class="ai-title">Account created</div>
+                        <div class="ai-time">5 days ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- Skin upload modal -->
+<div class="modal-overlay" id="skinModal" hidden>
+    <div class="modal">
+        <div class="modal-header">
+            <h3>Change Skin</h3>
+            <button class="modal-close" id="closeSkinModal">✕</button>
+        </div>
+        <div class="modal-body">
+            <div class="skin-drop-area" id="skinDropArea">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="4 4"/><path d="M24 16v16M16 24l8-8 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+                <p>Drag & drop your skin PNG here</p>
+                <span>or</span>
+                <label class="btn btn-primary" for="skinFileInput">Browse File</label>
+                <input type="file" id="skinFileInput" accept=".png" hidden/>
+            </div>
+            <p class="skin-modal-hint">64×64px PNG · Steve or Alex skin format</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" id="applySkin" disabled>Apply Skin</button>
+            <button class="btn btn-ghost" id="cancelSkin">Cancel</button>
